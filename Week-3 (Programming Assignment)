@@ -1,0 +1,62 @@
+k=[]
+def contracting(l):
+    for i in range(0,len(l)):
+        try:
+            g=l[i]-l[i+1]
+            if g<0:
+                g=-g
+            k.append(g)
+        except: 
+            break
+    res = all(i > j for i, j in zip(k, k[1:]))
+    return res
+  
+def leftrotate(m):
+    q=[]
+    for i in range(len(m)):
+        s=[]
+        for j in range(len(m[i])):
+            s.append(m[j][len(m)-1-i])
+        q.append(s)
+    return(q)
+def counthv(l):
+    new_list=[]
+    hc=[]
+    vc=[]
+    for k in l: 
+        new_list.append(int(k))
+    for a in range(1,len(new_list)-1):
+        if new_list[a]>new_list[a+1] and new_list[a]>new_list[a-1]:
+            hc.append(new_list[a])
+        if new_list[a]<new_list[a+1] and new_list[a]<new_list[a-1]:
+            vc.append(new_list[a])
+    return([len(hc),len(vc)])
+import ast
+
+def parse(inp):
+  inp = ast.literal_eval(inp)
+  return (inp)
+
+fncall = input()
+lparen = fncall.find("(")
+rparen = fncall.rfind(")")
+fname = fncall[:lparen]
+farg = fncall[lparen+1:rparen]
+
+if fname == "contracting":
+  arg = parse(farg)
+  print(contracting(arg))
+
+if fname == "counthv":
+  arg = parse(farg)
+  print(counthv(arg))
+
+if fname == "leftrotate":
+  arg = parse(farg)
+  savearg = arg
+  ans = leftrotate(arg)
+  if savearg == arg:
+    print(ans)
+  else:
+    print("Side effect")
+
