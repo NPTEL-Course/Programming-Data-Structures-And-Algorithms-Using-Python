@@ -1,0 +1,23 @@
+1. Suppose u and v both denote sets in Python. What is the most general condition that guarantees that u - (v - u) == u?
+ The sets u and v should be disjoint.
+ The set v should be a subset of the set u.
+ The set u should be a subset of the set v.
+ This is true for any u and v.
+
+This is true for any u and v.
+
+2. Suppose u and v both denote sets in Python. What is the most general condition that guarantees that u|v == u^v?
+ The sets u and v should be disjoint.
+ The set u should be a subset of the set v.
+ The set v should be a subset of the set u.
+ This is true for any u and v.
+
+The sets u and v should be disjoint.
+
+3. Suppose we insert 19 into the min heap [17,25,42,67,38,89,54,98,89]. What is the resulting heap?
+
+[17,19,42,67,25,89,54,98,89,38]
+
+4. Suppose we execute delete-min twice on the min-heap [13,29,24,67,52,89,45,98.79,58]. What is the resulting heap?
+
+[29,52,45,67,79,89,58,98]
